@@ -1,0 +1,94 @@
+<!--index.wxml-->
+<form  action="" bindsubmit="formSubmit">
+<!-- 用户姓名 -->
+<view  style="margin-top: 30rpx;display: flex;"> 
+        <text style="width: 129rpx; height: 99rpx; display: block; box-sizing: border-box">姓名</text>
+        <input wx:if="{{regist}}" name="username" type="text" placeholder="请输入你的真实姓名"/>
+        <view wx:else="{{regist}}">
+            <input wx:if="{{revise}}" name="username" type="text" value="{{userinfo.username}}"/>
+            <view wx:else="{{revise}}">{{userinfo.username}}</view>
+        </view>
+</view>
+<!-- 分割线 -->
+<view class="divLine" style="width: 800rpx;  display: block; box-sizing: border-box;margin-top: 1rpx;margin-left: 1rpx;">
+</view> 
+<!-- 用户性别 -->
+<view  style="margin-top: 10rpx;display: flex;"> 
+  <text style="width: 129rpx; height: 99rpx; display: block; box-sizing: border-box">性别</text>
+  <radio-group wx:if="{{regist}}" name="sex">
+          <label>
+            <radio value="男" />男</label>
+          <label>
+            <radio value="女" />女</label>
+      </radio-group>
+  <view wx:else="{{regist}}">
+      <radio-group wx:if="{{revise}}" name="sex">
+          <label>
+            <radio value="男" />男</label>
+          <label>
+            <radio value="女" />女</label>
+      </radio-group>
+      <view wx:else="{{revise}}">{{userinfo.sex}}</view>
+  </view>
+</view>
+<!-- 分割线 -->
+<view class="divLine" style="width: 800rpx;  display: block; box-sizing: border-box;margin-top: 1rpx;margin-left: 1rpx;">
+</view> 
+<!-- 分割线 -->
+<view class="divLine" style="width: 800rpx;  display: block; box-sizing: border-box;margin-top: 1rpx;margin-left: 1rpx;">
+</view> 
+<!-- 用户电话 -->
+<view  style="margin-top: 10rpx;display: flex;"> 
+        <text style="width: 129rpx; height: 99rpx; display: block; box-sizing: border-box">电话</text>
+        <input wx:if="{{regist}}" name="phone" type="number" placeholder="请输入你的联系电话"/>
+        <view wx:else="{{regist}}">
+          <input wx:if="{{revise}}" name="phone" type="number" value="{{userinfo.phone}}"/>
+          <view wx:else="{{revise}}">{{userinfo.phone}}</view>
+        </view>
+</view>
+<!-- 分割线 -->
+<view class="divLine" style="width: 800rpx;  display: block; box-sizing: border-box;margin-top: 1rpx;margin-left: 1rpx;">
+</view> 
+<!-- 家庭地址 -->
+<view style="margin-top: 10rpx;display: flex;"> 
+        <text style="width: 129rpx; height: 99rpx; display: block; box-sizing: border-box">地址</text>
+        <picker wx:if="{{regist}}" mode="region" bindchange="getUserProvince">
+          <view style="margin-top: 5rpx;">
+          省市区：<text wx:for="{{region}}">{{item}}</text>
+          </view>
+        </picker>
+        <view wx:else="{{regist}}">{{userinfo.address}}</view>
+</view>
+<!-- 分割线 -->
+<view class="divLine" style="width: 800rpx;  display: block; box-sizing: border-box;margin-top: 1rpx;margin-left: 1rpx;">
+</view> 
+<!-- 用户信誉值-->
+<view wx:if="{{!regist}}">
+    <view  style="margin-top: 10rpx;display: flex;"> 
+            <text style="width: 129rpx; height: 99rpx; display: block; box-sizing:    border-box">信誉值</text>
+            <view>{{userinfo.credibility}}</view>
+    </view>
+  <!-- 分割线 -->
+  <view class="divLine" style="width: 800rpx;  display: block; box-sizing: border-box;    margin-top: 1rpx;margin-left: 1rpx;">
+  </view> 
+<!-- 用户自我介绍-->
+
+<view style="margin-top: 30rpx;">自我描述:</view>
+<view  style="background-color:rgb(247, 241, 241);"> 
+        <input name="description" wx:if="{{regist}}" style="width: 732rpx; height: 400rpx; display: block; box-sizing: border-box; margin-left: 20rpx"  class="input"  placeholder="请对自己进行描述，300字以内" auto-focus="true"/>
+        <view wx:else="{{regist}}" >
+          <view wx:if="{{userinfo.description==''}}">这个人很懒，什么也没留下</view>
+          <view wx:else="{{userinfo.description==''}}">{{userinfo.description}}</view>
+        </view>
+</view>
+  <!-- 分割线 -->
+  <view class="divLine" style="width: 800rpx;  display: block; box-sizing: border-box;    margin-top: 1rpx;margin-left: 1rpx;">
+  </view> 
+
+</view>
+<button wx:if="{{regist}}" type="primary" form-type="submit">确认</button>
+<view wx:else="{{regist}}">
+    <button wx:if="{{revise}}" type="primary" form-type="submit">确认</button>
+    <button wx:else="{{revise}}" type="primary" bindtap="revise">修改信息</button>
+</view>
+</form>

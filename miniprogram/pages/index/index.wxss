@@ -1,0 +1,75 @@
+/**index.wxss**/
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #aaa;
+  }
+  
+  .userinfo-avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+  
+  .input{
+    border: 8rpx solid rgb(229, 230, 231);
+    margin: 10rpx;
+    width: 600rpx;
+  }
+  
+  
+  .swiper-item{
+    height: 400rpx;
+    background-color: rgb(130, 133, 136);
+    font-size: 30pt;
+  
+  }
+  
+  .swiper{
+    height: 400rpx;
+  }
+  .black{
+    color:black;
+    width: 700rpx;
+    margin-left: 5rpx;
+    display:block;
+    flex-direction: row;
+  }
+  .blue{
+    color: lightblue;
+  }
+  .white{
+    color:#aaa;
+    
+  }
+  
+  .red{
+    color: red;
+  
+  
+  
+  }
+  .nav{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background-color: lightgray;
+  }
+  .navitem{
+    width: 25%;
+    margin-top: 10rpx;
+    font-size: 30rpx;
+  }
+  .hr{
+    height: 15rpx;
+    background-color: #cccccc;
+    margin-top: 15rpx;
+    opacity: 0.2;
+  }
+  .button-hover{
+    background-color: red;
+    color:#fff;
+  }

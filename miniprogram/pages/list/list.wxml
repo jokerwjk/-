@@ -1,0 +1,75 @@
+<form action="" bindsubmit="formSubmit" style="height: 100%;">
+<!-- 零活类型 -->
+<picker name="orderType" mode="selector" bindchange='selectorChang' range="{{selectorItems}}" >
+  <view class="view1" style="line-height: 50rpx;margin-top: 30rpx;">
+    <view>零活类型：{{selector}}</view>
+  </view>
+</picker>
+<!-- 分割线 -->
+<view class="divLine" style="width: 600rpx;  display: block; box-sizing: border-box;margin-top: 10rpx;margin-left: 200rpx;">
+</view> 
+
+<!-- 零活名称 -->
+    <view class="view1"  style="margin-top: 30rpx;"> 
+        <text>零活名称:</text>
+        <input name="orderName" style="width: 549rpx; height: 54rpx; display: block; box-sizing: border-box; margin-left: 20rpx;"  class="input"  placeholder="7个字以内，如“摘草莓”" auto-focus="true"/>
+    </view>
+<!-- 分割线 -->
+<view class="divLine" style="width: 600rpx;  display: block; box-sizing: border-box;margin-top: 10rpx;margin-left: 200rpx;">
+</view> 
+<!-- 开工时间 -->
+    <picker name="startTime" mode="date" bindchange='dateChange' style="line-height: 60rpx;margin-top: 30rpx;">
+        <view>开工时间：{{date}}</view>
+    </picker>
+    <!-- 分割线 -->
+    <view class="divLine" style="width: 600rpx;  display: block; box-sizing: border-box;margin-top: 10rpx;margin-left: 200rpx;">
+</view> 
+<!-- 用工人数 -->
+<view class="view1" style="margin-top: 30rpx;"> 
+        <text>用工人数:</text>
+        <input name="orderNumber" style="width: 549rpx; height: 54rpx; display: block; box-sizing: border-box; margin-left: 20rpx"  class="input" type="number" placeholder="请输入用工人数" auto-focus="true"/>
+</view>
+
+<!-- 分割线 -->
+<view class="divLine" style="width: 600rpx;  display: block; box-sizing: border-box;margin-top: 10rpx;margin-left: 200rpx;">
+</view> 
+<!-- 单人工钱 -->
+<view class="view1" style="line-height: 100rpx;margin-top: 30rpx;">
+    <text>单人每天工钱:</text>
+     <input name="salary" style="width: 481rpx; height: 54rpx; display: block; box-sizing: border-box; margin-left: 20rpx;margin-top: 23rpx;" type="number" class="input"  placeholder="单个工人每天多少钱" auto-focus="true"/>
+</view>
+<!-- 分割线 -->
+<view class="divLine" style="width: 600rpx;  display: block; box-sizing: border-box;margin-top: 10rpx;margin-left: 200rpx;">
+</view> 
+<!-- 用工时间 -->
+<view class="view1" style="line-height: 100rpx;margin-top: 30rpx;">
+    <text>用工时间:</text>
+     <input name="orderDay" style="width: 481rpx; height: 54rpx; display: block; box-sizing: border-box; margin-left: 20rpx;margin-top: 23rpx;" type="number" class="input"  placeholder="工作所需工期（单位：天）" auto-focus="true"/>
+</view>
+
+<!-- 分割线 -->
+<view class="divLine" style="width: 600rpx;  display: block; box-sizing: border-box;margin-top: 10rpx;margin-left: 200rpx;">
+</view> 
+<!-- 选择地址 -->
+<view class="view1" style="line-height: 100rpx;" bindtap="map">
+    <text>工作地点：{{address}}</text>
+</view>
+<!-- 分割线 -->
+<view class="divLine" style="width: 600rpx;  display: block; box-sizing: border-box;margin-top: 10rpx;margin-left: 200rpx;">
+</view> 
+
+<!-- 零活描述 -->
+<view style="margin-top: 30rpx;">零活描述:</view>
+<view  style="background-color:lightgray;"> 
+  <input name="description" style="width: 732rpx; height: 279rpx; display: block; box-sizing: border-box; margin-left: 20rpx"  class="input"  placeholder="请对您发布的零活进行描述，300字以内" auto-focus="true"/>
+</view>
+<!-- 选择照片 -->
+<view class="photo_box">
+  <view wx:if="{{image_src != ''}}" class="photo_preview">
+    <image src="{{image_src}}" mode="aspectFit" bindtap="photo_preview"></image>
+    <view class="reselect" bindtap="reselect">重新选择</view>
+  </view>
+  <view wx:else class="photo_text" bindtap="chose_photo">点击拍照或上传本地照片</view>
+</view>
+  <button form-type="submit" type="primary">发布</button>
+</form>

@@ -1,0 +1,31 @@
+<!--pages/first/first.wxml-->
+<view  class="content" style="height: 600rpx;">
+<!--轮播图-->
+<view class="img">
+    <swiper indicator-dots='true' autoplay="true"   interval="6000"     duration='3000' indicator-color="white" style="height: 800rpx;"> 
+      <swiper-item >
+           <image  src="cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/picture/轮播图1.jpg" style="width: 736rpx; height: 800rpx; display: inline-block; box-sizing: border-box"></image>
+        </swiper-item>
+        <swiper-item>
+             <image src="cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/picture/轮播图2.png" style="width: 100%; height: 800rpx; display: inline-block; box-sizing: border-box;"></image>
+        </swiper-item>
+        <swiper-item>
+            <image  src="cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/picture/轮播图.jpg" style="width: 750rpx; height: 802rpx; display: inline-block; box-sizing: border-box"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<!--分割线-->
+<view class="hr">
+</view>
+<!--简介-->
+<view>
+<!--农活-->
+  <view>
+    <navigator url="../first/first?title=农活" open-type="navigate" hover-class="navigator-hover">
+         <view>
+             <image src="cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/picture/长图.jpg" style="width: 736rpx; height: 2000rpx; display: inline-block; box-sizing: border-box"></image>
+          </view>
+    </navigator>
+   </view>
+</view>
+</view>

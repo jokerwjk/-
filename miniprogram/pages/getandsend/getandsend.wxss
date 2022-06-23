@@ -1,0 +1,24 @@
+/* pages/getandsend/getandsend.wxss *//* pages/getlist/getlist.wxss */
+
+
+
+.selected{
+  color: red;
+  border-bottom-style:groove;
+  border-bottom-color:red ;
+  flex: 1;
+  text-align: center;
+  height:60rpx;
+
+}
+.normal{
+  color: black;
+  flex: 1;
+  text-align: center;
+  height: 70rpx;
+}
+.case-display{
+  margin-top: 20rpx;
+  display: flex;
+  font-size: 1.5ch;
+}

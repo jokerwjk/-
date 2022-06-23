@@ -1,0 +1,6 @@
+/* pages/first/first.wxss */
+.hr{
+    height: 15rpx;
+    background-color: #cccccc;
+    opacity: 0.2;
+  }

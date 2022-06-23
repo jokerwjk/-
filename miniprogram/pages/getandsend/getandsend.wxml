@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<!-- 我发的活页面 -->
+
+<view class="case-display" style="background-color: lightgray;" >
+  <block wx:for="{{scrollviewTitle}}" wx:key="index">
+    <view class="{{currentIndex==index?'selected':'normal'}}" id="{{index}}" bindtap="changeCurrentIndex">{{item}}
+    </view>
+  </block>
+</view>
+<view wx:if="{{currentIndex==0}}" wx:for="{{sendlist}}" wx:key="index" class="yellow" bindtap="tojuti" data-index="{{index}}" style="width: 750rpx; height: 300rpx; background:white; margin-top: 20rpx;display:flex;flex-direction: row;margin: 10rpx;background-color: lightgrey;">
+     
+     <image src="{{item.image}}" style="width: 265rpx; height: 300rpx; display: block; box-sizing: border-box; top: 10rpx; left: 20rpx"></image>
+       <view style="width: 485rpx;">
+         <view style="font-weight: 900;display: inline-block; position: absolute;margin-left: 10rpx;">{{item.orderName}}</view>
+         <view style="display: flex;justify-content:flex-end;">
+           <view style="display: inline-block;margin-right: 10rpx;">
+             <view style="display: flex;justify-content: flex-end;">
+               <view style="display: inline-block;font-size: small;color: red;border: red solid 1rpx; border-radius: 5rpx">{{item.orderNumber}}人</view>
+               <view style="display: inline-block;font-size: small;color: red;border: red solid 1rpx ; border-radius: 5rpx">{{item.orderDay}}天</view>
+             </view>
+           </view>
+         </view>
+            <view >
+               <text class="grey" style="font-weight: 300;font-size: small;">{{item.username}}</text>
+             </view>  
+   
+            <view>
+                <text class="grey"  style="top: 30rpx;line-height: 100rpx;font-size: small;"> 开工日期：{{item.startTime}}</text>
+             </view>
+             <view style="font-size:smaller">
+                  <text class="grey" style="font-size: 37rpx;color: rgb(241, 94, 83);line-height: 50rpx;font-weight: 400;"> 工资：{{item.salary}}元/天</text>
+             </view>
+             
+         </view>
+</view>
+<view wx:if="{{currentIndex==1}}" wx:for="{{getlist}}" wx:key="index" class="yellow" bindtap="tojuti" data-index="{{index}}" style="width: 750rpx; height: 300rpx; background:white; margin-top: 20rpx;display:flex;flex-direction: row;margin: 10rpx;background-color: lightgrey;">
+     
+     <image src="{{item.image}}" style="width: 265rpx; height: 300rpx; display: block; box-sizing: border-box; top: 10rpx; left: 20rpx"></image>
+       <view style="width: 485rpx;">
+         <view style="font-weight: 900;display: inline-block; position: absolute;margin-left: 10rpx;">{{item.orderName}}</view>
+         <view style="display: flex;justify-content:flex-end;">
+           <view style="display: inline-block;margin-right: 10rpx;">
+             <view style="display: flex;justify-content: flex-end;">
+               <view style="display: inline-block;font-size: small;color: red;border: red solid 1rpx; border-radius: 5rpx">{{item.orderNumber}}人</view>
+               <view style="display: inline-block;font-size: small;color: red;border: red solid 1rpx ; border-radius: 5rpx">{{item.orderDay}}天</view>
+             </view>
+           </view>
+         </view>
+            <view >
+               <text class="grey" style="font-weight: 300;font-size: small;">{{item.username}}</text>
+             </view>  
+   
+            <view>
+                <text class="grey"  style="top: 30rpx;line-height: 100rpx;font-size: small;"> 开工日期：{{item.startTime}}</text>
+             </view>
+             <view style="font-size:smaller">
+                  <text class="grey" style="font-size: 37rpx;color: rgb(241, 94, 83);line-height: 50rpx;font-weight: 400;"> 工资：{{item.salary}}元/天</text>
+             </view>
+             
+         </view>
+</view>

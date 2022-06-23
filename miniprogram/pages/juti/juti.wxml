@@ -1,0 +1,51 @@
+<!-- 客运司机点进去现实的页面 -->
+<view>
+<!-- 选择器的选择类别 -->
+    <view style=" height: 59rpx; display: block; box-sizing: border-box">零活类型：{{order.orderType}}</view>
+</view>
+
+<view>
+
+    <view>
+    <!-- 工作名字 -->
+          <text style="font-weight: 600;font-size: x-large;">{{order.orderName}}</text>
+     </view>
+
+    <!-- 工作资金 -->
+    <view>
+           <text class="grey" style="font-size: large;color: rgb(218, 92, 8);line-height: 50rpx;font-weight: 400;line-height: 80rpx;"> 工资：{{order.salary}}元/天</text>
+    </view>
+     
+     <!-- 开工时间 -->
+     <view>
+          <text class="grey"  style="top: 30rpx;line-height: 80rpx;"> 开工日期：{{order.startTime}}</text>
+     </view>
+
+     <!-- 零活工期 -->
+     <view>
+     <text class="grey" style="top: 30rpx;line-height: 80rpx;">零活工期:{{order.orderDay}}天</text>
+     </view>
+     <!-- 用工人数 -->
+     <view>
+        <text class="grey" style="top: 30rpx;line-height: 80rpx;">用工人数：{{order.orderNumber}}人</text>
+     </view>
+   
+</view>
+
+<!-- 横线，隔开 -->
+ <view class="hr" style="width: 750rpx; height: 29rpx; display: block; box-sizing: border-box"></view>
+<!-- 用工要求及零活描述 -->
+<view>
+            <view >用工要求及零活描述：</view>
+
+            <view style="line-height: 50rpx;">{{order.description}}</view>
+            <view style="line-height: 50rpx;">联系人：{{user.username}}</view>
+            <view style="line-height: 50rpx;">信誉积分：{{user.credibility}}</view>
+            <view style="line-height: 50rpx;">电话：{{user.phone}}</view>
+            
+</view>
+<!-- 地图组件 -->
+<view>开工地址：{{order.address}}</view>
+<map name="myMap" longitude="{{order.location[0]}}" latitude="{{order.location[1]}}" show-location="true" ></map>
+
+<button type="primary" bindtap="work" >立即抢活</button>

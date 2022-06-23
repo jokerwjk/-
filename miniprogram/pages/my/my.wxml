@@ -1,0 +1,96 @@
+<!--pages/my/my.wxml-->
+<view class="mian">
+<!--用户授权了，就显示头像和昵称-->
+<view class="user-info" wx:if="{{isShowUserName}}" >
+  <image class='avatar' src="{{userInfo.avatarUrl}}"></image>
+  <view class="info">
+    <text class="name">{{userInfo.nickName}}</text>
+  </view>
+</view>
+<!-- 如果用户没有授权，就显示登陆按钮 -->
+<view wx:else="{{isShowUserName}}" class="user-info" bindtap="getUserProfile">
+  <image class="avatar"></image>
+  <view class="info">
+    <text class="name">立即登录</text>
+  </view>
+
+</view>
+
+
+</view>
+<!-- 分割线 -->
+<view class="hr"></view>
+<!-- 订单布局 -->
+<view class="order">
+<!-- 订单tab -->
+<view class="order-tab">
+  <!-- 个人信息 -->
+<view bindtap="toUserinfo">
+  <view class="tab"  >
+        <view class="icon-imange">
+            <image src="cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/picture/我的_me.png" class="icon" style="box-sizing: border-box; margin-left: 30rpx; width: 60rpx; height: 60rpx; display: inline-block"></image>
+            <!-- <mp-badge content="1" class="icon-badge"></mp-badge>  -->
+            <text class="txt" style="width: 134rpx; height: 73rpx; display: flex; box-sizing: border-box; margin-left: 30rpx">个人信息</text>
+        </view>
+        <view class="divLine" style="width: 694rpx;  display: block; box-sizing: border-box"></view>
+    </view>
+</view>
+<!-- 我接的活 -->
+<view bindtap="togetandsend" data-op="get">
+    <view class="tab">
+        <view class="icon-imange" >
+            <image src="cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/picture/收件箱_inbox.png" class="icon" style="box-sizing: border-box; margin-left: 30rpx; width: 60rpx; height: 60rpx; display: inline-block"></image>
+            <!-- <mp-badge content="1" class="icon-badge"></mp-badge>  -->
+            <text class="txt" style="width: 134rpx; height: 73rpx; display: flex; box-sizing: border-box; margin-left: 30rpx">我接的活</text>
+        </view>
+        <view class="divLine" style="width: 694rpx;  display: block; box-sizing: border-box"></view>
+    </view>
+</view>
+<!--我发的活  -->
+<view bindtap="togetandsend" data-op="send" >
+    <view class="tab">
+        <view class="icon-imange">
+            <image src="cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/picture/圆形双上箭头_circle-double-up.png" class="icon" style="box-sizing: border-box; margin-left: 30rpx; width: 60rpx; height: 60rpx; display: inline-block"></image>
+            <mp-badge content="1" class="icon-badge"></mp-badge>
+        </view>
+        <text class="txt" style="width: 135rpx; height: 66rpx; display: flex; box-sizing: border-box;margin-left: 30rpx;">我发的活</text>
+        <view class="divLine" style="width: 694rpx;  display: block; box-sizing: border-box"></view>
+    </view>
+</view>
+    <!-- 我的钱包 -->
+    <view class="tab">
+        <view class="icon-imange">
+            <image src="cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/picture/钱包_wallet.png" class="icon "style=" display: flex; box-sizing: border-box; margin-left: 30rpx" style="box-sizing: border-box; margin-left: 30rpx; width: 60rpx; height: 60rpx; display: inline-block"></image>
+            <mp-badge content="1" class="icon-badge"></mp-badge>
+        </view>
+        <text class="txt" style="width: 135rpx; height: 66rpx; display: flex; box-sizing: border-box;margin-left: 30rpx;">我的钱包</text>
+        <view class="divLine" style="width: 694rpx;  display: block; box-sizing: border-box"></view>
+    </view>
+   <!-- 设置 -->
+    <view class="tab">
+        <view class="icon-imange">
+            <image src="cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/picture/配置_config.png" class="icon "style=" display: flex; box-sizing: border-box; margin-left: 30rpx" style="box-sizing: border-box; margin-left: 30rpx; width: 60rpx; height: 60rpx; display: inline-block"></image>
+            <mp-badge content="1" class="icon-badge"></mp-badge>
+        </view>
+        <text class="txt" style="width: 135rpx; height: 66rpx; display: flex; box-sizing: border-box;margin-left: 30rpx;">设置</text>
+       <view class="divLine" style="width: 694rpx;  display: block; box-sizing: border-box"></view> 
+    </view>
+<!--  意见反馈   -->
+    <view class="tab">
+        <view class="icon-imange">
+            <image src="cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/picture/发送邮件_send-email.png" class="icon "style=" display: flex; box-sizing: border-box; margin-left: 30rpx" style="box-sizing: border-box; margin-left: 30rpx; width: 60rpx; height: 60rpx; display: inline-block"></image>
+            <mp-badge content="1" class="icon-badge"></mp-badge>
+             <text class="txt" style="width: 135rpx; height: 66rpx; display: flex; box-sizing: border-box;margin-left: 30rpx;">意见反馈</text>
+        </view>
+       
+
+    </view>
+   
+</view>
+</view>
+
+
+
+
+
+
