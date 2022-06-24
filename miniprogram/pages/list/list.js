@@ -69,12 +69,13 @@ Page({
       console.log(e.detail.value)
       // 插入订单
       this.setData({
-      image_path:'cloud://cloud1-9gt341u00cd6f83b.636c-cloud1-9gt341u00cd6f83b-1310886251/orders_image/'+app.globalData.openid+mydata.getTime()+'.png'
+      image_path:'orders_image/'+app.globalData.openid+mydata.getTime()+'.png'
       })
       console.log(this.data.image_src)
       wx.cloud.uploadFile({
       // 指定上传到的云路径
       cloudPath: this.data.image_path,
+      filePath：this.data.image_src
       }).then(res=>{
       console.log('上传成功', res);
       })
